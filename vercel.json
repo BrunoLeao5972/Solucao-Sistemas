@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm build:client",
-  "outputDirectory": "dist/client",
+  "outputDirectory": "client/dist/client",
   "functions": {
     "api/[...path].ts": {
       "maxDuration": 30
