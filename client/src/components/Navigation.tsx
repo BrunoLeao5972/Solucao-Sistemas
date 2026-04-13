@@ -42,7 +42,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             <img
               src="/images/logo-solucao-sistemas.webp"
               alt="Solução Sistemas"
-              className="h-12 md:h-14 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-500"
+              className="h-14 md:h-20 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </Link>

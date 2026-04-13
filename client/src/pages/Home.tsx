@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Utensils, GraduationCap, ShoppingBag, Truck, Wrench, Database, Zap, Shield, Globe, Sparkles, LayoutGrid } from "lucide-react";
+import { ArrowRight, Utensils, GraduationCap, ShoppingBag, Truck, Wrench, Database, Zap, Shield, Globe, Sparkles, LayoutGrid, MapPin, Users, Calendar, Activity } from "lucide-react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -77,7 +77,7 @@ export default function Home() {
       <Navigation currentPage="/" />
 
       {/* Hero Section — Solução Sistemas WOW */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         {/* Background Video with Parallax */}
         <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
           <video
@@ -96,28 +96,28 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           style={{ opacity }}
-          className="container relative z-10 text-center px-6"
+          className="container relative z-10 text-center px-6 flex flex-col items-center pt-12 sm:pt-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "backOut" }}
-            className="inline-flex items-center gap-3 px-6 py-2 rounded-full glass-premium border-primary/20 text-primary text-sm font-bold mb-10 tracking-[0.2em] uppercase"
+            className="inline-flex items-center gap-3 px-6 py-2 rounded-full glass-premium border-primary/20 text-primary text-sm font-bold tracking-[0.2em] uppercase mb-6 sm:mb-8"
           >
             <Sparkles className="w-4 h-4 fill-primary" />
             <span>O Futuro da Automação</span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-[8.5rem] font-black mb-8 tracking-tighter leading-[0.85] text-glow-white"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-black mb-8 tracking-tighter leading-[0.9] text-glow-white"
           >
-            MAIS CONTROLE, <br />
-            <span className="text-glow-primary">MENOS PREJUÍZO</span>
+            <span className="block">MAIS CONTROLE</span>
+            <span className="block text-glow-primary">MENOS PREJUIZO</span>
           </motion.h1>
 
           <motion.p 
@@ -129,11 +129,11 @@ export default function Home() {
             Sua solução completa de tecnologia para <span className="text-white font-bold">controle total e lucratividade máxima.</span> Automação inteligente para quem não aceita menos que a perfeição.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-4"
           >
             <Link href="/produtos">
               <Button size="xl" className="btn-wow bg-primary text-primary-foreground font-black tracking-wider text-lg sm:text-xl px-8 sm:px-9 rounded-2xl group">
@@ -150,17 +150,17 @@ export default function Home() {
               </Button>
             </a>
           </motion.div>
-        </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-primary/60 font-bold">Explore o Ecossistema</span>
-          <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent" />
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="flex flex-col items-center gap-2 mt-8 sm:mt-12"
+          >
+            <span className="text-[10px] uppercase tracking-[0.3em] text-primary/60 font-bold">Explore o Ecossistema</span>
+            <div className="w-px h-12 sm:h-16 bg-gradient-to-b from-primary to-transparent" />
+          </motion.div>
         </motion.div>
       </section>
 
@@ -268,23 +268,26 @@ export default function Home() {
       {/* Stats Section — Solução no Brasil */}
       <section className="py-40 relative">
         <div className="container relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { number: "27", label: "ESTADOS ATENDIDOS", sub: "Presença Nacional" },
-              { number: "15k+", label: "CLIENTES ATIVOS", sub: "Sucesso Comprovado" },
-              { number: "25y+", label: "DE MERCADO", sub: "Tradição & Inovação" },
-              { number: "1M+", label: "USUÁRIOS/DIA", sub: "Escalabilidade Real" },
+              { number: "27", label: "ESTADOS ATENDIDOS", sub: "Presença Nacional", icon: MapPin },
+              { number: "15k+", label: "CLIENTES ATIVOS", sub: "Sucesso Comprovado", icon: Users },
+              { number: "35+", label: "ANOS DE MERCADO", sub: "Tradição & Inovação", icon: Calendar },
+              { number: "2Mi+", label: "USUÁRIOS/DIA", sub: "Escalabilidade Real", icon: Activity },
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="group"
+                className="group flex flex-col items-center"
               >
-                <p className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter group-hover:text-primary transition-colors">{stat.number}</p>
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-primary/60 mb-2">{stat.label}</p>
-                <p className="text-sm text-muted-foreground font-medium">{stat.sub}</p>
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                  <stat.icon className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <p className="text-4xl md:text-6xl font-black text-white mb-2 tracking-tighter group-hover:text-primary transition-colors">{stat.number}</p>
+                <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary/60 mb-1">{stat.label}</p>
+                <p className="text-xs md:text-sm text-muted-foreground font-medium">{stat.sub}</p>
               </motion.div>
             ))}
           </div>
@@ -329,7 +332,7 @@ export default function Home() {
             >
               <a href="https://wa.me/558533076262" target="_blank" rel="noopener noreferrer">
                 <Button size="xl" className="btn-wow bg-primary text-primary-foreground font-black tracking-widest px-11 sm:px-12 rounded-2xl text-lg sm:text-xl shadow-[0_0_60px_rgba(34,197,94,0.4)]">
-                  FALAR COM VENDAS
+                  FALE CONOSCO
                 </Button>
               </a>
               <Link href="/produtos">

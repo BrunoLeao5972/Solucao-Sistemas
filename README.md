@@ -197,6 +197,43 @@ O build gera:
 - **Frontend**: `dist/public/`
 - **Backend**: `dist/index.js`
 
+### Deploy na Vercel
+
+Este repositório já está preparado para deploy único (frontend + API serverless) na Vercel:
+
+- Build do frontend: `pnpm build:client`
+- Saída estática: `dist/client`
+- API serverless: `api/[...path].ts`
+- Fallback SPA: qualquer rota não-arquivo cai em `index.html`
+
+Passos:
+
+1. Importe o repositório na Vercel.
+2. Em **Build & Output Settings**, mantenha detectado pelo `vercel.json`.
+3. Configure as variáveis de ambiente necessárias no projeto da Vercel.
+4. Faça o deploy.
+
+Variáveis recomendadas na Vercel:
+
+```env
+NODE_ENV=production
+DATABASE_URL=
+JWT_SECRET=
+VITE_APP_ID=
+OAUTH_SERVER_URL=
+OWNER_OPEN_ID=
+BUILT_IN_FORGE_API_URL=
+BUILT_IN_FORGE_API_KEY=
+VITE_ANALYTICS_ENDPOINT=
+VITE_ANALYTICS_WEBSITE_ID=
+```
+
+Após deploy, valide:
+
+- `/api/health` retorna `{ "ok": true }`
+- Navegação direta em rotas como `/sobre` abre normalmente (sem 404)
+- Fluxos que usam `/api/trpc` respondem sem erro
+
 ### Servidor
 - **Porta de desenvolvimento**: Configurada no Vite
 - **Porta de produção**: Configurada no Express

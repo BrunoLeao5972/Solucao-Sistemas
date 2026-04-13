@@ -9,32 +9,43 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import ClientArea from "./pages/ClientArea";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+  return null;
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path={"/"} component={Home} />
       <Route path={"/sobre"} component={About} />
       <Route path={"/produtos"} component={Products} />
       <Route path={"/produtos/:id"} component={ProductDetail} />
       <Route path={"/cliente"} component={ClientArea} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+      <Route path={"/privacidade"} component={Privacy} />
+      <Route path={"/termos"} component={Terms} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
         defaultTheme="light"
-        // switchable
       >
         <TooltipProvider>
           <Toaster />

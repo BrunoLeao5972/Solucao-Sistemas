@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Code2, Award, Zap, Users, Target, Rocket, ShieldCheck, Sparkles, MapPin } from "lucide-react";
+import { ArrowRight, Code2, Zap, Users, Target, ShieldCheck, Sparkles, MapPin, Calendar, Activity, Receipt, BarChart3, Headphones, Lock } from "lucide-react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -36,7 +36,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-9xl font-black mb-10 tracking-tighter text-glow-white leading-[0.85]"
           >
-            MAIS QUE SOFTWARE, <br />
+            MAIS QUE SOFTWARE <br />
             <span className="text-glow-primary">RESULTADOS!</span>
           </motion.h1>
           <motion.p 
@@ -50,30 +50,30 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats Section — Solução Sistemas */}
+      {/* Stats Section — Solução no Brasil */}
       <section className="py-32 relative bg-white/[0.02] border-y border-white/5">
         <div className="container relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { number: "+35 anos", label: "DE MERCADO", icon: Rocket },
-              { number: "+10 mil", label: "CLIENTES", icon: Award },
-              { number: "27", label: "PRESENTE EM TODA A UNIDADE FEDERATIVA DO BRASIL", icon: MapPin },
-              { number: "+2M", label: "PESSOAS ATENDIDAS POR DIA", icon: Users },
+              { number: "27", label: "ESTADOS ATENDIDOS", sub: "Presença Nacional", icon: MapPin },
+              { number: "15k+", label: "CLIENTES ATIVOS", sub: "Sucesso Comprovado", icon: Users },
+              { number: "35+", label: "ANOS DE MERCADO", sub: "Tradição & Inovação", icon: Calendar },
+              { number: "2Mi+", label: "USUÁRIOS/DIA", sub: "Escalabilidade Real", icon: Activity },
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                className="group relative"
+                className="group flex flex-col items-center"
               >
-                <div className="absolute -inset-8 bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="mb-6 flex justify-center relative z-10">
-                   <stat.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-500" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                  <stat.icon className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <p className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter relative z-10 group-hover:text-primary transition-colors">{stat.number}</p>
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-primary/60 relative z-10 group-hover:text-white transition-colors">{stat.label}</p>
+                <p className="text-4xl md:text-6xl font-black text-white mb-2 tracking-tighter group-hover:text-primary transition-colors">{stat.number}</p>
+                <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary/60 mb-1">{stat.label}</p>
+                <p className="text-xs md:text-sm text-muted-foreground font-medium">{stat.sub}</p>
               </motion.div>
             ))}
           </div>
@@ -141,14 +141,14 @@ export default function About() {
               <h2 className="text-5xl md:text-8xl font-black mb-16 text-white tracking-tighter leading-none">GESTÃO DE <br /><span className="text-glow-primary">SUCESSO!</span></h2>
               <div className="space-y-10">
                 {[
-                  { title: "Emissão de NFC-e integrada ao sistema", desc: "Sistemas totalmente integrados com as exigências fiscais brasileiras." },
-                  { title: "Relatórios Gerenciais", desc: "Múltiplos dashboards com auditoria para tomada de decisão estratégica." },
-                  { title: "Pós-Venda Ativo", desc: "Relacionamento contínuo para acompanhar o desempenho do seu negócio." },
-                  { title: "Segurança de Dados", desc: "Proteção total das informações da sua empresa com tecnologia de ponta." }
+                  { title: "Emissão de NFC-e integrada ao sistema", desc: "Sistemas totalmente integrados com as exigências fiscais brasileiras.", icon: Receipt },
+                  { title: "Relatórios Gerenciais", desc: "Múltiplos dashboards com auditoria para tomada de decisão estratégica.", icon: BarChart3 },
+                  { title: "Pós-Venda Ativo", desc: "Relacionamento contínuo para acompanhar o desempenho do seu negócio.", icon: Headphones },
+                  { title: "Segurança de Dados", desc: "Proteção total das informações da sua empresa com tecnologia de ponta.", icon: Lock }
                 ].map((skill, i) => (
                   <div key={i} className="flex gap-8 group">
                     <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary transition-all duration-500 border border-white/5 group-hover:border-primary/40 group-hover:scale-110">
-                      <Code2 className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
+                      <skill.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
                     </div>
                     <div>
                       <h4 className="text-2xl font-black text-white mb-2 group-hover:text-primary transition-colors tracking-tight">{skill.title}</h4>

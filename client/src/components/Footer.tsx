@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/images/logo-solucao-sistemas.webp"
                 alt="Solução Sistemas"
-                className="h-12 w-auto brightness-0 invert opacity-90"
+                className="h-16 md:h-20 w-auto brightness-0 invert opacity-90"
               />
             </Link>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-xs font-medium">
@@ -92,8 +92,8 @@ export default function Footer() {
             &copy; {currentYear} SOLUÇÃO SISTEMAS. TODOS OS DIREITOS RESERVADOS.
           </p>
           <div className="flex gap-12 text-sm font-bold tracking-widest uppercase text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
+            <Link href="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
+            <Link href="/termos" className="hover:text-primary transition-colors">Termos de Uso</Link>
           </div>
         </div>
       </div>
