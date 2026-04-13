@@ -20,6 +20,18 @@ export default function Navigation({ currentPage }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const navItems = [
     { href: "/", label: "HOME" },
     { href: "/sobre", label: "SOBRE" },
@@ -42,7 +54,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             <img
               src="/images/logo-solucao-sistemas.webp"
               alt="Solução Sistemas"
-              className="h-14 md:h-20 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-500"
+              className="h-16 md:h-20 w-auto brightness-0 invert group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </Link>
@@ -97,7 +109,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
             className="fixed inset-0 z-[90] md:hidden bg-background/98 backdrop-blur-[50px] flex flex-col items-center justify-center gap-12 p-12"
           >
             <div className="absolute top-10 left-10">
-               <img src="/images/logo-solucao-sistemas.webp" className="h-10 brightness-0 invert" alt="" />
+               <img src="/images/logo-solucao-sistemas.webp" className="h-14 brightness-0 invert" alt="" />
             </div>
             <button onClick={() => setIsOpen(false)} className="absolute top-10 right-10 p-4 text-white"><X className="w-10 h-10" /></button>
             

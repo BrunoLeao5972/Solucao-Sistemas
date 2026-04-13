@@ -216,7 +216,7 @@ export default function ClientArea() {
         <Navigation currentPage="/cliente" />
 
         {/* Header do Cliente */}
-        <section className="py-8 bg-accent text-accent-foreground">
+        <section className="pt-24 pb-8 bg-accent text-accent-foreground">
           <div className="container">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
@@ -486,7 +486,7 @@ export default function ClientArea() {
       <Navigation currentPage="/cliente" />
 
       {/* Hero Section - Mais curta */}
-      <section className="pt-16 pb-8 md:pt-24 md:pb-12 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
+      <section className="pt-28 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
         <div className="container">
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Área do Cliente</h1>
