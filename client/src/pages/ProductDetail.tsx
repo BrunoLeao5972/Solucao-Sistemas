@@ -283,9 +283,9 @@ export default function ProductDetail() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-12 md:pt-32 md:pb-20 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
+      <section className="pt-36 pb-12 md:pt-40 md:pb-20 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
         <div className="container">
-          <Link href="/produtos" className="relative z-50 inline-flex items-center gap-2 text-accent hover:text-accent/80 mb-6">
+          <Link href="/produtos" className="relative z-50 inline-flex items-center gap-2 text-accent hover:text-accent/80 mt-4 mb-6">
             <ArrowLeft className="w-4 h-4" />
             Voltar aos Produtos
           </Link>
