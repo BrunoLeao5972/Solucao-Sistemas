@@ -15,144 +15,212 @@ const productDetails: Record<string, {
   features: string[];
   benefits: string[];
   targetAudience: string;
+  screenshots: { src: string; alt: string; title: string }[];
+  cases: { client: string; segment: string; result: string; quote?: string }[];
 }> = {
-  "ecommerce": {
-    title: "E-Commerce",
-    description: "Sistema de loja online com carrinho de compras, gestão de produtos e pagamentos",
-    fullDescription: "A plataforma de E-Commerce foi desenvolvida para empreendedores que desejam criar e gerenciar uma loja online profissional. Com funcionalidades robustas de catálogo, carrinho de compras, pagamentos seguros e gestão de pedidos, você consegue vender online com confiança.",
+  "food-web": {
+    title: "Food Web",
+    description: "Gestão inteligente para restaurantes, bares e delivery com controle de mesas, comandas e estoque.",
+    fullDescription: "O Food Web é a solução completa para o setor de alimentação. Com controle de mesas, comandas digitais, gestão de estoque e integração com delivery, você otimiza toda a operação do seu restaurante ou bar. Sistema 100% web, acessível de qualquer dispositivo.",
     features: [
-      "Catálogo de Produtos Ilimitado",
-      "Carrinho de Compras Inteligente",
-      "Integração com Múltiplos Gateways de Pagamento",
-      "Gestão Automática de Pedidos",
-      "Controle de Estoque em Tempo Real",
-      "Suporte a Cupons e Promoções",
-      "SEO Otimizado para Buscadores",
-      "Suporte Técnico 24/7",
+      "Controle de Mesas e Comandas",
+      "KDS Integrado (Cozinha)",
+      "Gestão de Estoque em Tempo Real",
+      "Integração com iFood e Delivery",
+      "Relatórios Financeiros Detalhados",
+      "Fiscal Integrado (NFC-e)",
+      "App para Garçons",
+      "Painel de Acompanhamento",
     ],
     benefits: [
-      "Aumento de 200% em vendas online",
-      "Redução de 80% em tempo de gerenciamento",
-      "Maior alcance de clientes",
-      "Pagamentos seguros e confiáveis",
-      "Escalabilidade para crescimento",
+      "Redução de 40% no tempo de atendimento",
+      "Diminuição de 60% em erros de pedidos",
+      "Aumento de 25% no ticket médio",
+      "Controle total do estoque",
+      "Gestão simplificada do delivery",
     ],
-    targetAudience: "Empreendedores, pequenas e médias lojas que desejam vender online",
+    targetAudience: "Restaurantes, bares, lanchonetes, food trucks e serviços de alimentação",
+    screenshots: [
+      { src: "/images/foodweb/mesas.png", alt: "Controle de Mesas", title: "Mapa de Mesas Interativo" },
+      { src: "/images/foodweb/comandas.png", alt: "Gestão de Comandas", title: "Comandas Digitais" },
+      { src: "/images/foodweb/estoque.png", alt: "Controle de Estoque", title: "Gestão de Estoque" },
+      { src: "/images/foodweb/relatorios.png", alt: "Relatórios", title: "Relatórios Financeiros" },
+    ],
+    cases: [
+      { client: "Restaurante Sabor & Arte", segment: "Restaurante à la carte", result: "Aumento de 35% na rotatividade de mesas", quote: "O Food Web transformou nossa operação. Conseguimos atender mais clientes com a mesma equipe." },
+      { client: "Bar do Zé", segment: "Bar e petiscaria", result: "Redução de 50% no tempo de fechamento de caixa", quote: "Antes demorávamos 1 hora para fechar o caixa. Agora é questão de minutos." },
+      { client: "Pizzaria Napoli", segment: "Pizzaria delivery", result: "Integração perfeita delivery/balcão", quote: "Finalmente temos controle total dos pedidos, seja no salão ou delivery." },
+    ],
   },
-  "sistema-leads": {
-    title: "Sistema de Leads",
-    description: "Plataforma inteligente para gerenciamento de prospecção, vendas e relacionamento com clientes",
-    fullDescription: "Gerencie todos os seus leads em um único lugar. Com automação inteligente, você consegue acompanhar cada etapa do funil de vendas e aumentar suas taxas de conversão significativamente.",
+  "varejo-web": {
+    title: "Varejo Web",
+    description: "Automação comercial completa com PDV, controle de estoque e gestão de vendas.",
+    fullDescription: "O Varejo Web é o sistema de gestão completo para lojas de qualquer porte. Com frente de caixa ágil, controle de estoque inteligente, módulo fiscal integrado e relatórios gerenciais, você tem o controle total do seu negócio em uma plataforma 100% web.",
     features: [
-      "Captura Automática de Leads",
-      "Pipeline de Vendas Customizável",
-      "Automação de Email Marketing",
-      "Análise de Conversão Detalhada",
-      "Integração com Redes Sociais",
-      "Relatórios de Desempenho",
-      "Gestão de Tarefas e Acompanhamento",
-      "API para Integrações Personalizadas",
+      "Frente de Caixa (PDV) Rápido",
+      "Módulo Fiscal Completo",
+      "Controle de Estoque Inteligente",
+      "Gestão de Clientes (CRM)",
+      "Relatórios Gerenciais",
+      "Multi-loja e Multi-caixa",
+      "Importação de XML de Fornecedores",
+      "Etiquetas e Código de Barras",
     ],
     benefits: [
-      "Aumento de 50% em conversões",
-      "Redução de 70% no tempo de vendas",
-      "Melhor qualificação de leads",
-      "Acompanhamento automático",
-      "Relatórios em tempo real",
+      "Fechamento de caixa 3x mais rápido",
+      "Controle preciso do estoque",
+      "Redução de 30% em perdas",
+      "Gestão eficiente multi-loja",
+      "Conformidade fiscal total",
     ],
-    targetAudience: "Agências, consultórios, imobiliárias e empresas de vendas B2B",
+    targetAudience: "Lojas de varejo, atacado, boutiques, mercados e comércios em geral",
+    screenshots: [
+      { src: "/images/varejo/pdv.png", alt: "PDV - Frente de Caixa", title: "PDV Rápido e Intuitivo" },
+      { src: "/images/varejo/estoque.png", alt: "Controle de Estoque", title: "Gestão de Estoque" },
+      { src: "/images/varejo/vendas.png", alt: "Relatório de Vendas", title: "Relatórios de Vendas" },
+      { src: "/images/varejo/clientes.png", alt: "Cadastro de Clientes", title: "Gestão de Clientes" },
+    ],
+    cases: [
+      { client: "Moda Fashion", segment: "Loja de roupas", result: "Controle total de 3 lojas em único sistema", quote: "Consigo ver o estoque de todas as lojas em tempo real." },
+      { client: "Supermercado Central", segment: "Mini mercado", result: "Redução de 45% em quebras de estoque", quote: "O controle de estoque nos mostrou onde estávamos perdendo dinheiro." },
+      { client: "Loja do Eletrônico", segment: "Loja de eletrônicos", result: "Gestão eficiente de garantias", quote: "O controle de garantias é perfeito para nossa operação." },
+    ],
   },
-  "gestao-escolar": {
-    title: "Gestão Escolar",
-    description: "Solução integrada para administração educacional, alunos, professores e financeiro",
-    fullDescription: "Simplifique a administração escolar com uma plataforma completa que integra alunos, professores, notas, financeiro e comunicação com pais. Tudo em um único lugar, acessível de qualquer dispositivo.",
+  "educacao": {
+    title: "Educação",
+    description: "Gestão escolar completa: alunos, professores, notas, financeiro e comunicação.",
+    fullDescription: "Sistema integrado para gestão de instituições de ensino. Desde o controle pedagógico (diário, notas, frequência) até a gestão administrativa e financeira. Comunicação direta com pais e alunos via portal e aplicativo.",
     features: [
-      "Gestão Completa de Alunos",
-      "Controle de Notas e Frequência",
-      "Comunicação com Pais em Tempo Real",
-      "Módulo Financeiro Escolar",
-      "Gestão de Professores e Turmas",
-      "Calendário Acadêmico Integrado",
-      "Relatórios de Desempenho",
       "Portal do Aluno e Responsável",
+      "Diário Eletrônico e Notas",
+      "Gestão de Matrículas",
+      "Módulo Financeiro Escolar",
+      "Controle de Frequência",
+      "Comunicação Institucional",
+      "Relatórios de Desempenho",
+      "Gestão de Documentos",
     ],
     benefits: [
-      "Redução de 80% em tarefas administrativas",
-      "Melhor comunicação com pais",
-      "Acompanhamento de desempenho em tempo real",
-      "Segurança de dados educacionais",
-      "Conformidade com regulamentações",
+      "Redução de 70% em papelada",
+      "Comunicação instantânea com pais",
+      "Controle financeiro simplificado",
+      "Acompanhamento pedagógico eficiente",
+      "Transparência institucional",
     ],
-    targetAudience: "Escolas, colégios, cursos e instituições educacionais",
+    targetAudience: "Escolas, colégios, cursos livres, universidades e instituições educacionais",
+    screenshots: [
+      { src: "/images/educacao/diario.png", alt: "Diário Eletrônico", title: "Diário Eletrônico" },
+      { src: "/images/educacao/notas.png", alt: "Lançamento de Notas", title: "Gestão de Notas" },
+      { src: "/images/educacao/financeiro.png", alt: "Financeiro Escolar", title: "Mensalidades e Financeiro" },
+      { src: "/images/educacao/portal.png", alt: "Portal do Aluno", title: "Portal do Aluno" },
+    ],
+    cases: [
+      { client: "Colégio Futuro", segment: "Colégio particular", result: "Comunicação 100% digital com pais", quote: "Os pais adoram receber informações em tempo real pelo app." },
+      { client: "Curso de Inglês Speak", segment: "Curso de idiomas", result: "Controle de turmas e professores otimizado", quote: "Organizamos 50 turmas sem nenhuma confusão de horário." },
+      { client: "Escola Técnica Pro", segment: "Escola técnica", result: "Gestão de estágios integrada", quote: "O controle de estágios ficou muito mais profissional." },
+    ],
   },
-  "software-oficinas": {
-    title: "Software para Oficinas",
-    description: "Sistema especializado para controle de serviços, peças, agendamentos e clientes",
-    fullDescription: "Gerencie sua oficina com eficiência. Controle de serviços, peças, agendamentos e clientes em uma plataforma intuitiva. Aumente a produtividade e a satisfação dos clientes.",
+  "delivery": {
+    title: "Delivery",
+    description: "Plataforma completa para delivery com app próprio, rastreamento e integrações.",
+    fullDescription: "Sistema completo para operação de delivery. Com aplicativo próprio para clientes, painel administrativo, app para entregadores e integração com iFood. Controle total da operação desde o pedido até a entrega.",
     features: [
-      "Agendamento de Serviços",
+      "Aplicativo Próprio (Android/iOS)",
+      "Painel de Pedidos em Tempo Real",
+      "Rastreamento de Entregas",
+      "Integração iFood",
+      "App para Entregadores",
+      "Gestão de Taxas de Entrega",
+      "Relatórios de Desempenho",
+      "Cupons e Promoções",
+    ],
+    benefits: [
+      "Propriedade sobre dados dos clientes",
+      "Redução de taxas de marketplaces",
+      "Entregas mais rápidas e eficientes",
+      "Fidelização de clientes",
+      "Operação 100% integrada",
+    ],
+    targetAudience: "Restaurantes, lanchonetes, pizzarias, açaiterias e negócios de delivery",
+    screenshots: [
+      { src: "/images/delivery/app.png", alt: "App de Delivery", title: "App do Cliente" },
+      { src: "/images/delivery/painel.png", alt: "Painel de Pedidos", title: "Painel de Pedidos" },
+      { src: "/images/delivery/motoboy.png", alt: "App do Entregador", title: "App do Entregador" },
+      { src: "/images/delivery/integracao.png", alt: "Integração iFood", title: "Integração com iFood" },
+    ],
+    cases: [
+      { client: "Burger House", segment: "Hamburgueria", result: "App próprio com 5.000 downloads", quote: "Temos nosso próprio app, os clientes pedem direto sem taxas." },
+      { client: "Pizzaria Bella", segment: "Pizzaria", result: "Tempo médio de entrega reduzido 20%", quote: "O rastreamento nos ajudou a otimizar as rotas de entrega." },
+      { client: "Açaí Mania", segment: "Açaiteria", result: "Pedidos via app superam iFood", quote: "Hoje 60% dos pedidos vêm pelo nosso app próprio." },
+    ],
+  },
+  "servicos": {
+    title: "Serviços",
+    description: "Gestão de ordens de serviço, orçamentos e controle para prestadores de serviços.",
+    fullDescription: "Sistema especializado para empresas de prestação de serviços. Controle de ordens de serviço, orçamentos, agenda técnica, estoque de peças e faturamento. Ideal para oficinas, assistências técnicas e prestadores de serviços.",
+    features: [
+      "Ordens de Serviço (OS)",
+      "Orçamentos Aprovados",
+      "Agenda Técnica",
       "Controle de Peças e Estoque",
-      "Gestão de Clientes e Histórico",
-      "Orçamentos e Notas Fiscais",
-      "Acompanhamento de Serviços",
-      "Relatórios de Faturamento",
-      "Integração com Fornecedores",
-      "App Mobile para Técnicos",
+      "Faturamento e Notas",
+      "Histórico do Cliente",
+      "Garantia de Serviços",
+      "App para Técnicos",
     ],
     benefits: [
-      "Aumento de 35% em agendamentos",
-      "Redução de 50% em tempo de serviço",
-      "Melhor gestão de peças",
-      "Aumento de satisfação dos clientes",
-      "Controle financeiro preciso",
+      "Redução de 50% em OS perdidas",
+      "Agenda otimizada",
+      "Controle de garantias eficiente",
+      "Histórico completo de atendimentos",
+      "Faturamento simplificado",
     ],
-    targetAudience: "Oficinas mecânicas, elétricas, de informática e serviços em geral",
+    targetAudience: "Oficinas, assistências técnicas, prestadores de serviços e manutenção",
+    screenshots: [
+      { src: "/images/servicos/os.png", alt: "Ordem de Serviço", title: "Ordens de Serviço" },
+      { src: "/images/servicos/agenda.png", alt: "Agenda Técnica", title: "Agenda de Técnicos" },
+      { src: "/images/servicos/pecas.png", alt: "Controle de Peças", title: "Gestão de Peças" },
+      { src: "/images/servicos/faturamento.png", alt: "Faturamento", title: "Faturamento" },
+    ],
+    cases: [
+      { client: "Tech Assistência", segment: "Assistência técnica", result: "Controle de 200 OS/mês", quote: "Antes usávamos papel. Agora tudo está no sistema, nada se perde." },
+      { client: "Oficina AutoPeças", segment: "Oficina mecânica", result: "Agenda técnica 100% otimizada", quote: "Conseguimos atender 30% mais carros por dia." },
+      { client: "Conserto Express", segment: "Assistência eletro", result: "Controle de garantias perfeito", quote: "Nunca mais tivemos problema com controle de garantia." },
+    ],
   },
-  "personal-trainer": {
-    title: "Software para Personal Trainers",
-    description: "Plataforma completa para gestão de clientes, treinos, resultados e agendamentos",
-    fullDescription: "Gerencie seus clientes, crie planos de treino personalizados, acompanhe resultados e agende sessões tudo em um único lugar. Ideal para personal trainers que querem profissionalizar seu negócio.",
+  "kds-vision": {
+    title: "KDS Vision",
+    description: "Display de produção para cozinhas que elimina erros e aumenta a velocidade de entrega.",
+    fullDescription: "O KDS Vision é um sistema moderno de gerenciamento de cozinha que substitui as comandas de papel. Com interface 100% web, atualização em tempo real e painel de priorização, otimiza o fluxo de produção e elimina erros de comunicação entre salão e cozinha.",
     features: [
-      "Gestão de Clientes e Fichas",
-      "Criação de Planos de Treino",
-      "Acompanhamento de Resultados",
-      "Agendamento de Sessões",
-      "Histórico de Treinos",
-      "Cálculo de IMC e Métricas",
-      "Relatórios de Progresso",
-      "App Mobile para Clientes",
-    ],
-    benefits: [
-      "Melhor organização de agenda",
-      "Aumento de retenção de clientes",
-      "Acompanhamento profissional",
-      "Resultados mensuráveis",
-      "Crescimento do negócio",
-    ],
-    targetAudience: "Personal trainers, academias, estúdios de fitness e profissionais de saúde",
-  },
-  "kds": {
-    title: "KDS - Kitchen Display System",
-    description: "Sistema de gerenciamento para restaurantes e cozinhas com controle de pedidos em tempo real",
-    fullDescription: "O KDS é um sistema moderno de gerenciamento de cozinha que substitui os tradicionais comandas de papel. Com interface intuitiva e atualização em tempo real, otimiza o fluxo de pedidos da cozinha, reduz erros e aumenta a eficiência operacional.",
-    features: [
+      "Display 100% Web (sem instalação)",
       "Recebimento de Pedidos em Tempo Real",
-      "Interface Intuitiva para Cozinheiros",
-      "Controle de Status dos Pedidos",
-      "Gestão de Fila de Produção",
+      "Priorização Inteligente de Pedidos",
+      "Controle de Status (Fila/Preparo/Pronto)",
       "Notificações Visuais e Sonoras",
-      "Histórico de Pedidos",
-      "Integração com PDV",
+      "Tempo Médio de Preparo",
+      "Integração com Food Web",
       "Dashboard de Desempenho",
     ],
     benefits: [
       "Redução de 70% em erros de pedidos",
       "Aumento de 40% na velocidade de entrega",
+      "Eliminação de comandas de papel",
       "Melhor comunicação cozinha-salão",
       "Otimização do tempo de preparo",
-      "Redução de desperdícios",
     ],
-    targetAudience: "Restaurantes, bares, lanchonetes, cozinhas comerciais e serviços de alimentação",
+    targetAudience: "Restaurantes, bares, lanchonetes, cozinhas comerciais e delivery",
+    screenshots: [
+      { src: "/images/kds/kds-admin.png", alt: "Painel Administrativo", title: "Painel Administrativo" },
+      { src: "/images/kds/kds-cozinha.png", alt: "Tela da Cozinha", title: "Display da Cozinha" },
+      { src: "/images/kds/kds-painel.png", alt: "Painel de Acompanhamento", title: "Painel de Pedidos" },
+      { src: "/images/kds/kds-relatorios.png", alt: "Relatórios", title: "Relatórios de Desempenho" },
+    ],
+    cases: [
+      { client: "Restaurante Fogo & Brasa", segment: "Churrascaria", result: "Erros de pedido zerados", quote: "Depois do KDS, não tivemos mais nenhum pedido errado na cozinha." },
+      { client: "Lanchonete Speed", segment: "Lanchonete", result: "Tempo de preparo reduzido 35%", quote: "A priorização automática nos ajudou a organizar a produção." },
+      { client: "Café Central", segment: "Cafeteria", result: "Integração perfeita com o caixa", quote: "O garçom lança, a cozinha vê instantaneamente. Perfeito!" },
+    ],
   },
 };
 
@@ -166,13 +234,8 @@ export default function ProductDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomed, setZoomed] = useState(false);
 
-  // Imagens do KDS
-  const kdsImages = [
-    { src: "/images/kds/kds-admin.png", alt: "Painel Administrativo - Gerenciamento de pedidos", title: "Painel Administrativo" },
-    { src: "/images/kds/kds-cozinha.png", alt: "Tela da Cozinha - Acompanhamento em tempo real", title: "Tela da Cozinha" },
-    { src: "/images/kds/kds-painel.png", alt: "Painel de Acompanhamento - Display para clientes", title: "Painel de Acompanhamento" },
-    { src: "/images/kds/kds-relatorios.png", alt: "Relatórios - Eficiência operacional", title: "Relatórios e Estatísticas" },
-  ];
+  // Imagens do produto (do objeto product)
+  const productImages = product?.screenshots || [];
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -186,12 +249,12 @@ export default function ProductDetail() {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % kdsImages.length);
+    setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
     setZoomed(false);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + kdsImages.length) % kdsImages.length);
+    setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
     setZoomed(false);
   };
 
@@ -220,9 +283,9 @@ export default function ProductDetail() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
+      <section className="pt-28 pb-12 md:pt-32 md:pb-20 bg-gradient-to-br from-accent/10 via-transparent to-transparent">
         <div className="container">
-          <Link href="/produtos" className="flex items-center gap-2 text-accent hover:text-accent/80 mb-6">
+          <Link href="/produtos" className="relative z-50 inline-flex items-center gap-2 text-accent hover:text-accent/80 mb-6">
             <ArrowLeft className="w-4 h-4" />
             Voltar aos Produtos
           </Link>
@@ -236,144 +299,87 @@ export default function ProductDetail() {
         <div className="container">
           <h2 className="text-2xl font-bold mb-8">Visualize o Produto</h2>
           
-          {productId === "kds" ? (
-            /* Screenshots do KDS - Galeria clicável */
-            <div className="grid md:grid-cols-2 gap-6">
-              {kdsImages.map((image, index) => (
-                <div 
-                  key={index}
-                  className="bg-background border border-border rounded-lg overflow-hidden shadow-lg cursor-pointer group relative"
-                  onClick={() => openLightbox(index)}
-                >
-                  <img 
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <p className="text-white font-medium text-sm">{image.title}</p>
-                  </div>
+          {/* Screenshots do Produto - Galeria clicável */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {productImages.map((image, index) => (
+              <div 
+                key={index}
+                className="bg-background border border-border rounded-lg overflow-hidden shadow-lg cursor-pointer group relative"
+                onClick={() => openLightbox(index)}
+              >
+                <img 
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-              ))}
-            </div>
-          ) : (
-            /* Placeholder para outros produtos */
-            <div className="grid md:grid-cols-2 gap-6">
-              {[1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="bg-background border-2 border-dashed border-border rounded-lg aspect-video flex items-center justify-center"
-                >
-                  <div className="text-center">
-                    <ImageIcon className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-muted-foreground">Screenshot {i}</p>
-                    <p className="text-sm text-muted-foreground mt-2">Espaço reservado para imagem do produto</p>
-                  </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <p className="text-white font-medium text-sm">{image.title}</p>
                 </div>
-              ))}
-            </div>
-          )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Lightbox / Galeria Modal */}
+      {/* Lightbox / Galeria Simples - Tamanho Natural */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-6xl w-[95vw] h-[90vh] p-0 bg-black/95 border-none">
+        <DialogContent className="w-screen h-screen max-w-none max-h-none p-0 bg-black border-none rounded-none">
           <DialogTitle className="sr-only">
-            {kdsImages[currentImageIndex]?.title || "Visualização da imagem"}
+            {productImages[currentImageIndex]?.title || "Visualização da imagem"}
           </DialogTitle>
           
-          {/* Header com título e botão fechar */}
-          <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gradient-to-b from-black/80 to-transparent">
-            <div className="text-white">
-              <h3 className="font-semibold text-lg">{kdsImages[currentImageIndex]?.title}</h3>
-              <p className="text-white/70 text-sm">
-                {currentImageIndex + 1} / {kdsImages.length}
-              </p>
+          {/* Header */}
+          <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 bg-black/80">
+            <div className="text-white flex items-center gap-3">
+              <span className="text-sm">
+                {currentImageIndex + 1} / {productImages.length}
+              </span>
+              <span className="font-semibold">{productImages[currentImageIndex]?.title}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={toggleZoom}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                title={zoomed ? "Reduzir" : "Ampliar"}
-              >
-                <ZoomIn className="w-5 h-5" />
-              </button>
-              <button
-                onClick={closeLightbox}
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                title="Fechar"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Imagem principal */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            {/* Botão anterior */}
             <button
-              onClick={prevImage}
-              className="absolute left-4 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-              title="Imagem anterior"
+              onClick={closeLightbox}
+              className="p-2 rounded-full hover:bg-white/20 text-white"
             >
-              <ChevronLeft className="w-8 h-8" />
-            </button>
-
-            {/* Imagem com zoom */}
-            <div 
-              className={`relative transition-transform duration-300 ${zoomed ? 'scale-150 cursor-zoom-out' : 'cursor-zoom-in'}`}
-              onClick={toggleZoom}
-            >
-              <img
-                src={kdsImages[currentImageIndex]?.src}
-                alt={kdsImages[currentImageIndex]?.alt}
-                className="max-w-full max-h-[80vh] object-contain"
-                onError={(e) => { 
-                  (e.target as HTMLImageElement).style.display = 'none'; 
-                }}
-              />
-            </div>
-
-            {/* Botão próximo */}
-            <button
-              onClick={nextImage}
-              className="absolute right-4 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-              title="Próxima imagem"
-            >
-              <ChevronRight className="w-8 h-8" />
+              <X className="w-6 h-6" />
             </button>
           </div>
 
-          {/* Thumbnails de navegação */}
-          <div className="absolute bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-black/80 to-transparent">
-            <div className="flex items-center justify-center gap-2">
-              {kdsImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setCurrentImageIndex(idx);
-                    setZoomed(false);
-                  }}
-                  className={`w-16 h-10 rounded overflow-hidden border-2 transition-all ${
-                    idx === currentImageIndex 
-                      ? 'border-white scale-110' 
-                      : 'border-transparent opacity-60 hover:opacity-100'
-                  }`}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.title}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
-            </div>
+          {/* Imagem Expandida - Tela Cheia sem Corte */}
+          <div className="absolute inset-0 pt-14 pb-0 bg-black flex items-center justify-center">
+            <img
+              src={productImages[currentImageIndex]?.src}
+              alt={productImages[currentImageIndex]?.alt}
+              className="max-w-full max-h-full object-contain"
+              style={{ 
+                width: 'auto',
+                height: 'auto',
+                maxWidth: '100%',
+                maxHeight: 'calc(100vh - 56px)'
+              }}
+              onError={(e) => { 
+                (e.target as HTMLImageElement).style.display = 'none'; 
+              }}
+            />
           </div>
+
+          {/* Botões de Navegação */}
+          <button
+            onClick={prevImage}
+            className="fixed left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/20 hover:bg-white/30 rounded-full text-white"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+          
+          <button
+            onClick={nextImage}
+            className="fixed right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white/20 hover:bg-white/30 rounded-full text-white"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
         </DialogContent>
       </Dialog>
 
@@ -408,8 +414,35 @@ export default function ProductDetail() {
         </div>
       </section>
 
+      {/* Cases de Sucesso */}
+      {product.cases && product.cases.length > 0 && (
+        <section className="py-20 bg-muted/50">
+          <div className="container">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Cases de Sucesso</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {product.cases.map((caseItem, i) => (
+                <Card key={i} className="p-6 bg-background border-border hover:border-primary/50 transition-colors">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">
+                      {caseItem.segment}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{caseItem.client}</h3>
+                  <p className="text-accent font-semibold mb-3">{caseItem.result}</p>
+                  {caseItem.quote && (
+                    <blockquote className="text-muted-foreground italic text-sm border-l-2 border-primary pl-4">
+                      "{caseItem.quote}"
+                    </blockquote>
+                  )}
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Target Audience */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20">
         <div className="container">
           <Card className="p-8 bg-accent text-accent-foreground">
             <h3 className="text-2xl font-bold mb-4">Para Quem é Ideal?</h3>

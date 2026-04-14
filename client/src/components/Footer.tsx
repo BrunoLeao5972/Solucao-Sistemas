@@ -54,15 +54,21 @@ export default function Footer() {
             <h4 className="text-white font-black tracking-widest uppercase text-sm mb-10">Navegação</h4>
             <ul className="space-y-6">
               {[
-                { label: "Sobre Nós", href: "/sobre" },
-                { label: "Seja Parceiro", href: "/sobre" },
-                { label: "Área Privativa", href: "/cliente" },
-                { label: "Suporte Técnico", href: "https://wa.me/558533076262" },
+                { label: "Sobre Nós", href: "/sobre", external: false },
+                { label: "Seja Parceiro", href: "/sobre", external: false },
+                { label: "Área Privativa", href: "/cliente", external: false },
+                { label: "Suporte Técnico", href: "https://wa.me/558533076262", external: true },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-muted-foreground hover:text-primary transition-colors text-lg font-medium">
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-lg font-medium">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="text-muted-foreground hover:text-primary transition-colors text-lg font-medium">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -11,7 +11,7 @@ const solutions = [
   {
     id: "food-web",
     title: "Food Web",
-    description: "Gestão inteligente para o setor de alimentação, com controle de mesas, comandas e estoque.",
+    description: "Gestão inteligente para restaurantes, bares e delivery com controle de mesas, comandas e estoque.",
     features: ["Controle de Mesas", "KDS Integrado", "Gestão de Estoque", "Relatórios Financeiros"],
     icon: Utensils,
     color: "from-blue-500/30 to-cyan-500/30"
@@ -19,7 +19,7 @@ const solutions = [
   {
     id: "varejo-web",
     title: "Varejo Web",
-    description: "Automação comercial para lojas, com frente de caixa ágil e gestão de retaguarda completa.",
+    description: "Automação comercial completa com PDV, controle de estoque e gestão de vendas.",
     features: ["Frente de Caixa (PDV)", "Módulo Fiscal", "Controle de Estoque", "Gestão de Vendas"],
     icon: ShoppingBag,
     color: "from-purple-500/30 to-pink-500/30"
@@ -27,7 +27,7 @@ const solutions = [
   {
     id: "educacao",
     title: "Educação",
-    description: "Solução robusta para gestão escolar, desde o pedagógico até o financeiro.",
+    description: "Gestão escolar completa: alunos, professores, notas, financeiro e comunicação.",
     features: ["Portal do Aluno", "Diário Eletrônico", "Gestão de Matrículas", "Módulo Financeiro"],
     icon: GraduationCap,
     color: "from-yellow-500/30 to-orange-500/30"
@@ -35,7 +35,7 @@ const solutions = [
   {
     id: "delivery",
     title: "Delivery",
-    description: "Plataforma de entregas com integração total e monitoramento em tempo real.",
+    description: "Plataforma completa para delivery com app próprio, rastreamento e integrações.",
     features: ["App de Delivery", "Rastreamento", "Integração iFood", "Painel de Pedidos"],
     icon: Truck,
     color: "from-red-500/30 to-orange-500/30"
@@ -43,7 +43,7 @@ const solutions = [
   {
     id: "servicos",
     title: "Serviços",
-    description: "Gestão de ordens de serviço e contratos para prestadores de serviços e oficinas.",
+    description: "Gestão de ordens de serviço, orçamentos e controle para prestadores de serviços.",
     features: ["Ordens de Serviço", "Controle de Peças", "Agenda Técnica", "Faturamento"],
     icon: Wrench,
     color: "from-green-500/30 to-emerald-500/30"
@@ -51,7 +51,7 @@ const solutions = [
   {
     id: "kds-vision",
     title: "KDS Vision",
-    description: "Monitor de produção para cozinhas que elimina erros e aumenta a velocidade de entrega.",
+    description: "Display de produção para cozinhas que elimina erros e aumenta a velocidade de entrega.",
     features: ["Display 100% Web", "Tempo de Preparo", "Priorização de Pedidos", "Sync em Tempo Real"],
     icon: Database,
     color: "from-emerald-500/30 to-teal-500/30"
